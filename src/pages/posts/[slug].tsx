@@ -1,15 +1,17 @@
-import { gql } from "graphql-request";
+import { gql, GraphQLClient } from "graphql-request";
 import Image from "next/image";
 
-import { getGraphCMS } from "../../services/graphcms";
+// import { getGraphCMS } from "../../services/graphcms";
 
 import styles from "./styles.module.scss";
 
-const graphcms = getGraphCMS()
+const graphcms = new GraphQLClient(
+  "https://api-sa-east-1.hygraph.com/v2/cl905gwq71ckm01t620nj3dzs/master"
+)
 
 const QUERY = gql`
   query Post($slug: String!){
-    posts(where: {slug: $slug}){
+    post(where: {slug: $slug}){
       id
       title
       slug
@@ -60,10 +62,10 @@ export default function ProjectPost({post}){
   )
 }
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
   const { posts } = await graphcms.request(SLUGLIST);
   return {
-    paths: posts.map((post) => ({ params: { slug: post.slug } })),
+    paths: posts.map((post: { slug: string; }) => ({ params: { slug: post.slug } })),
     fallback: false,
   };
 }

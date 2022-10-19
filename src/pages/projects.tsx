@@ -1,13 +1,17 @@
-import { gql } from 'graphql-request';
+import { gql, GraphQLClient } from 'graphql-request';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import coverUrl from '../../public/images/teste1.png';
 
 import { ProjectCard } from '../components/ProjectCard';
-import { getGraphCMS } from '../services/graphcms';
+// import { getGraphCMS } from '../services/graphcms';
 
 import styles from '../styles/pages/projects.module.scss';
+
+const graphcms = new GraphQLClient(
+  "https://api-sa-east-1.hygraph.com/v2/cl905gwq71ckm01t620nj3dzs/master"
+)
 
 const QUERY = gql`
   {
@@ -81,7 +85,6 @@ export default function Projects({ posts }) {
 }
 
 export async function getStaticProps() {
-  const graphcms = getGraphCMS();
   const { posts } = await graphcms.request(QUERY);
 
   return {

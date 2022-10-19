@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const graphcms = new GraphQLClient(
-  process.env.GRAPHCMS_CONTENT_API
+  "https://api-sa-east-1.hygraph.com/v2/cl905gwq71ckm01t620nj3dzs/master"
 )
 
 const QUERY = gql`

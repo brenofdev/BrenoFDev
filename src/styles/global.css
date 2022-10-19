@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-/* :root {
-
-} */
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+}
 
 @media (max-width: 1080px) {
   html {
@@ -26,9 +26,9 @@
   color: ;
 } */
 
-/* body, input, textarea, select, button {
-  font: 400 1rem 'Roboto', sans-serif;
-} */
+body, input, textarea, select, button {
+  font: 400 1rem 'Poppins', sans-serif;
+}
 
 button {
   cursor: pointer;

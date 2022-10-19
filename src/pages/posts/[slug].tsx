@@ -9,7 +9,7 @@ const graphcms = getGraphCMS()
 
 const QUERY = gql`
   query Post($slug: String!){
-    post(where: {slug: $slug}){
+    posts(where: {slug: $slug}){
       id
       title
       slug

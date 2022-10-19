@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const graphcms = new GraphQLClient(
-  "https://api-sa-east-1.hygraph.com/v2/cl905gwq71ckm01t620nj3dzs/master"
+  process.env.GRAPHCMS_CONTENT_API
 )
 
 const QUERY = gql`
@@ -54,7 +54,7 @@ export default function ProjectPost({post}){
       <Image 
         src={post.projectPhoto.url} 
         alt="banner do projeto"
-        width={1700}
+        width={1760}
         height={3000} 
         
       />

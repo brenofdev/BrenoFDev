@@ -10,7 +10,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import styles from '../styles/pages/projects.module.scss';
 
 const graphcms = new GraphQLClient(
-  "https://api-sa-east-1.hygraph.com/v2/cl905gwq71ckm01t620nj3dzs/master"
+  process.env.GRAPHCMS_CONTENT_API
 )
 
 const QUERY = gql`
@@ -51,34 +51,6 @@ export default function Projects({ posts }) {
         ))}
         
         
-
-        <Link href="">
-          <div className={styles.projectCard}>
-            <Image 
-              src={coverUrl}
-              alt="asd"
-              width={400}
-              height={200}
-            />
-
-            <div className={styles.projectDescription}>
-              <strong>
-                {/* {title} */} Thairony Ferdz
-              </strong>
-              <div className={styles.content}>
-                {/* {subContent} */}
-                Website contendo um portfólio de projetos reais, manifestos, blog com conteúdos pessoais, templates. E um formulário de briefing completo para contato. 
-
-              </div>
-            
-              <div className={styles.category}>
-                {/* {category} */}
-                Projeto Real
-              </div>
-            </div>
-          </div>
-        </Link>
-
       </div>
     </main>
   )

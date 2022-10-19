@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  // padding-top: 10rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-top: 6.7rem;
+    color: #333;
+    font-size: 7rem;
+    font-weight: bold;
+  }    
+  
+  h6 {
+    margin-top: 4rem;
+    margin-bottom: 4.4rem;
+    color: #333;
+    font-size: 2.8rem;
+    font-weight: 500;
+      
+  }
+  
+  .content {
+    max-width: 1300px;
+    color: #333;
+    font-size: 2.8rem;
+    margin-bottom: 12rem;
+  }
+
+  // .projectPhoto {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+
+  
+}
